@@ -103,6 +103,7 @@ Valor do pedido: 3500
 Status do pedido: (1 - PENDENTE / 2 - PAGO / 3 - CANCELADO) 2
 Pedido registrado!
 ```
+## Versão de teste de commit na branch melhoria-readme.
 
 
     
