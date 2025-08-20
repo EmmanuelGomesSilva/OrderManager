@@ -1,6 +1,7 @@
 package com.ordermanager.repository;
 
 import com.ordermanager.model.Cliente;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -9,8 +10,11 @@ public class ClienteRepository {
 
     private final List<Cliente> clientes = new ArrayList<>();
 
+    private int proximoId = 1; // começa em 1
+
     // Adiciona cliente na lista
     public void cadastrarCliente(Cliente c) {
+        c.setId(proximoId++);// atribui ID automático
         clientes.add(c);
     }
 
@@ -35,12 +39,6 @@ public class ClienteRepository {
 
     // Remove cliente pelo ID
     public boolean removerCliente(int id) {
-        for (Cliente c : clientes) {
-            if (c.getId() == id) {
-                clientes.remove(c);
-                return true;
-            }
-        }
-        return false;
+        return clientes.removeIf(c -> c.getId() == id);
     }
 }

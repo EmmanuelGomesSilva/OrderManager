@@ -13,7 +13,6 @@ public class PedidoService {
 
     // Registra um pedido com validações simples
     public boolean registrarPedido(Pedido p) {
-        if (p.getId() <= 0) return false;
         if (p.getValor() <= 0) return false;
         if (p.getStatus() == null) p.setStatus(StatusPedido.PENDENTE);
 

@@ -9,8 +9,10 @@ public class PedidoRepository {
 
     private final List<Pedido> pedidos = new ArrayList<>();
 
+    private int proximoId = 1;// começa em 1
     // Adiciona pedido
     public void cadastrarPedido(Pedido p) {
+        p.setId(proximoId++);// atribui ID automático e incrementa
         pedidos.add(p);
     }
 
@@ -35,12 +37,6 @@ public class PedidoRepository {
 
     // Remove pedido pelo ID
     public boolean removerPedido(int id) {
-        for (Pedido p : pedidos) {
-            if (p.getId() == id) {
-                pedidos.remove(p);
-                return true;
-            }
-        }
-        return false;
+        return pedidos.removeIf(p -> p.getId() == id);
     }
 }
