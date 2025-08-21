@@ -1,4 +1,7 @@
 # OrderManager
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+[![Java](https://img.shields.io/badge/Java-21-red)](https://www.oracle.com/java/)
+
 
 OrderManager é um sistema pessoal em Java para treinar CRUD e POO, com menus interativos no console. Permite cadastrar, listar, atualizar e remover clientes e pedidos, com validação básica de dados e controle de status.
 
@@ -12,11 +15,34 @@ OrderManager é um sistema pessoal em Java para treinar CRUD e POO, com menus in
 
 ## Estrutura do Projeto
 
-- **model/**: Contém as classes `Cliente`, `Pedido` e os enums `StatusCliente` e `StatusPedido`
-- **repository/**: `ClienteRepository` e `PedidoRepository` guardam os dados em memória
-- **service/**: `ClienteService` e `PedidoService` com as regras de negócio
-- **util/**: `InputHelper` para ler dados do usuário de forma mais fácil
-- **App.java**: Classe principal que roda o programa
+```
+src/
+└─ com/
+   └─ ordermanager/
+      ├─ enums/
+      │  ├─ StatusCliente.java
+      │  └─ StatusPedido.java
+      │
+      ├─ main/
+      │  └─ App.java
+      │
+      ├─ model/
+      │  ├─ Cliente.java
+      │  └─ Pedido.java
+      │
+      ├─ repository/
+      │  ├─ ClienteRepository.java
+      │  └─ PedidoRepository.java
+      │
+      ├─ service/
+      │  ├─ ClienteService.java
+      │  └─ PedidoService.java
+      │
+      └─ util/
+         ├─ InputHelper.java
+         └─ MenuHelper.java
+```
+
 
 ## Como Executar
 
@@ -30,7 +56,8 @@ cd OrderManager
 ```
 3. Compile todos os arquivos `.java`
 ```bash
-javac src/com/ordermanager/*.java
+javac src/com/ordermanager/**/*.java
+
 ```
 4. Execute a aplicação:
 ```bash
